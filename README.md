@@ -1,6 +1,6 @@
 # Trybe 
 
-Este repositório contém todas as atividades de aprendizagem desenvolvidas por _ [Vinícius] (LinkDoYourLinkedinHere) _ enquanto estudava em [Trybe] (https://www.betrybe.com/): rocket: 
+Este repositório contém todas as atividades desenvolvidas por Vinícius enquanto estudava na Trybe
  
 ## Fundamentos de Desenvolvimento Web: white_check_mark: 
 
