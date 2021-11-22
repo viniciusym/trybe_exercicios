@@ -6,8 +6,8 @@ Este repositório contém todas as atividades desenvolvidas por Vinícius enquan
 
 ##### Bloco 1: Introdução - Unix e Shell 
 
-- [] 1-3: _Unix e Shell- Parte 1_
-- [] 1-4: _Unix e Shell- Parte 2_ 
+- [ ] 1-3: _Unix e Shell- Parte 1_
+- [ ] 1-4: _Unix e Shell- Parte 2_ 
 
 ##### Bloco 2: Git e GitHub 
 
