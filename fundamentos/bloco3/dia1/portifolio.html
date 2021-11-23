@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Portfólio</title>
-    <style>
-        body{
-            font-family: monospace;
-            background-color:#303633;
-            color: #8B48C5;
-            text-align: center;
-            font-size: 20px;
-        }
-        #estado{
-            color: #EDD2E0
-        }
-        #cidade{
-            color: #EDD2E0;
-        }
-        .links{
-            color: #EDD2E0;
-            text-decoration: none;
-        }
-        h1{
-            font-size: 2em;
-            font-weight: bold;
-            color: #B298DC;
-        }
-        
-    </style>
+  <meta charset="UTF-8">
+  <title>Portfólio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div>
     <h1>Portfólio</h1>
     <a href="#descrição" class="links">descrição</a><br>
     <a href="#habilidades" class="links">habilidades</a><br>
     <a href="#site" class="links">site que gosto</a>
-    <h2>Vinícius yamate mansano</h2>
-    <img src="foto.jpg" alt="foto do vinicius" width="40px" id="vinicius">
-    <p id="descrição">Meu nome é <a href="#vinicius" class="links">Vinícius</a>, moro em <strong id="cidade">Marínga</strong> no estado do <strong id="estado">Paraná</strong>.</p>
+    <h2 id="nome">Vinícius yamate mansano</h2>
+    <div class="descriçao">
+      <img src="foto.jpg" alt="foto do vinicius" width="40px" id="vinicius">
+      <p id="descrição">Meu nome é <a href="#vinicius" class="links">Vinícius</a>, moro em <strong
+          id="cidade">Marínga</strong> no estado do <strong id="estado">Paraná</strong>.</p>
+      <p>Estudo desenvolvimento web na Trybe.</p>
+      <a href="https://github.com/viniciusym" target="_blank"><img src="https://marcas-logos.net/wp-content/uploads/2020/03/GITHUB-LOGO.png" alt="github" id="github">github</a>
+    </div>
     <h4 id="habilidades"><em>Algumas habilidades que possuo são:</h4></em>
-    <ul>
+    <div class="list">
+      <ul>
         <li><strong>git</strong></li>
-        <li><strong>github</strong></li>
+        <li class="impar"><strong>github</strong></li>
         <li><strong>html</strong></li>
-        <li><strong>css</strong></li>
-    </ul>
-    <p id="site">Um site que eu gosto é o <a href="https://www.google.com/" target="_blank">google</a>, que uso para fazer pesquisas.</p>
+        <li class="impar"><strong>css</strong></li>
+      </ul>
+    </div>
+    <p id="site">Um site que eu gosto é o <a href="https://www.google.com/" target="_blank">google</a>, que uso para fazer
+      pesquisas.</p>
+  </div>
 </body>
+
 </html>
