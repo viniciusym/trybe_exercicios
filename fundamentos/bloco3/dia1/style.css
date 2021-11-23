@@ -1,0 +1,52 @@
+
+body{
+    font-family: monospace;
+    background-color:#303633;
+    color: #8B48C5;
+    font-size: 20px;
+    padding: 90px;
+}
+#estado{
+    color: #EDD2E0
+}
+#cidade{
+    color: #EDD2E0;
+}
+.links{
+    color: #EDD2E0;
+    text-decoration: none;
+}
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    color: #B298DC;
+}
+#nome{
+    text-align: center;
+}
+.drescriçao{
+    padding: 90px;
+}
+#vinicius{
+    float: left;
+    margin: 0px 25px 0px 0px;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 20px;
+}
+.list{
+
+}
+
+#habilidades{
+    margin-top: 31px;
+}
+
+.impar{
+    color: orangered;
+}
+
+#github{
+    width: 60px;
+    margin-top: 20px;
+}
