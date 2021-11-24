@@ -1,0 +1,36 @@
+.classificação{
+   
+}
+
+#foto{float: right;
+}
+
+#visão{
+    float: right;
+    width: 250px;
+}
+
+#foto-tamanho{
+    float: right;
+    width: 250px;
+}
+
+#foto-caçando{
+    float: right;
+    width: 250px;
+}
+
+#carnivoro{
+    padding-top: 100px;
+    padding-bottom: 90px;
+}
+
+#tamanho{
+    padding-bottom: 40px;
+}
+
+#visao{
+    padding-bottom: 40px;
+}
+
+
