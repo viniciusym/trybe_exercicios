@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(253, 251, 251);
+    font-family: monospace
+}
+
+#cabecalho{
+    position: fixed;
+    top: 0px;
+    background-color: gray;
+    max-height: 15%;
+    width: 100%;
+    text-align: center;
+}
+
+#minha_foto{
+    width: 200px;
+}
+
+#titulo{
+    
+    
+}
+
+main{
+    margin-top:11%;
+}
+
+
+
+#listas {
+    max-width:70%;
+    
+}
+
+nav{
+    top: 79.875px;
+    background-color: hotpink;
+    padding: 9px;
+    position: fixed;
+    width: 100%;
+}
+
+#rodape{
+    background-color: gray;
+    padding: 17px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+#github_logo{
+    width: 28px;
+}
+
+   
