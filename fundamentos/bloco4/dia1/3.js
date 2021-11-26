@@ -1,6 +1,6 @@
-const a = 90
-const b = 4
-const c = -90
+const a = 90;
+const b = 4;
+const c = -90;
 
 if (a > b && a > c) {
     console.log(a);

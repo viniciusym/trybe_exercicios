@@ -1,11 +1,11 @@
-const a = 0
+const a = 0;
 
 if(a > 0) {
     console.log("positive");
 }
 else if (a < 0) {
-    console.log("negative")
+    console.log("negative");
 }
 else {
-    console.log("o numero é zero")
+    console.log("o numero é zero");
 }
