@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  
+<body>
+  <form action="" method="get" id="form">
+  <fieldset id="primeira">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" required maxlength="40" name="nome">
+    <label for="email">Email</label>
+    <input type="text" id="email" required maxlength="50">
+    <label for="CPF">CPF</label>
+    <input type="text" id="CPF" required maxlength="11">
+    <label for="endereco">Endereço</label>
+    <input type="text" id="endereco" required maxlength="200">
+    <label for="cidade">Cidade</label>
+    <input type="text" id="cidade" required maxlength="28">
+    <label for="estados">Estado</label>
+    <select name="estados" id="estados" required></select>
+    <input type="radio" name="tipo" required>Casa
+    <input type="radio" name="tipo" required>Apartamento
+  </fieldset>
+  <fieldset id="segundo">
+    <label for="resumo">resumo do curriculo</label><br>
+    <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000"></textarea><br>
+    <label for="cardo">Cargo:</label>
+    <input type="text" id="cargo" name="cargo" maxlength="40">
+    <label for="descriçao">Descriçao do cargo:</label>
+    <input type="text" id="descriçao" maxlength="500">
+    <label for="data">Data de inicio:</label>
+    <input type="date" id="data">
+  </fieldset>
+<button type="submit" id="submit">Enviar</button>
+<button type="reset">Limpar</button>
+</form>
+  <script src="script.js"></script>
+  
+</body>
+
+</html>

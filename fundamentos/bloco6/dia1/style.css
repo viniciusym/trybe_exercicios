@@ -1,0 +1,27 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+#primeira{
+    margin: 20px auto;
+    height: 200px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#segundo{
+    height: 500px;
+}
+
+#form{
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+button{
+    width: 20%;
+    margin: 8px auto;
+}
