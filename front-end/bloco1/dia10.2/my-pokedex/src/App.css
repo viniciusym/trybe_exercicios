@@ -1,0 +1,29 @@
+*{
+}
+
+.pokemons-blocks{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon-block{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 3px rgba(250, 28, 28, 0.932);
+  border-radius: 8px;
+  margin: 9px;
+  width: 355px;
+  background-color: rgb(61, 61, 248);
+  color: rgba(255, 255, 255, 0.979);
+  height: 150px
+}
+
+.pokemon-block ul{
+  list-style-type: none;
+}
+
+.pokemon-block ul li {
+  margin: 15px 0px;
+}
