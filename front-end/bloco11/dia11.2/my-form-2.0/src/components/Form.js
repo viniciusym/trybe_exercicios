@@ -35,6 +35,20 @@ class Form extends React.Component{
             <input type="radio" name="type" id="casa" />Casa
           </label>
         </fieldset>
+        <fieldset>
+          <label htmlFor="curriculum">
+            Resumo do currículo
+            <textarea name="curriculum" id="curriculum" cols="30" rows="10" maxLength="1000"/>
+          </label>
+          <label htmlFor="position">
+            Cargo
+            <textarea name="position" id="position" cols="30" rows="10" maxLength="40"/>
+          </label>
+          <label htmlFor="position-description">
+            Descrição do cargo
+            <textarea name="position-description" id="position-description" cols="30" rows="10" maxLength="500"/>
+          </label>
+        </fieldset>
       </form>
     );
   }
