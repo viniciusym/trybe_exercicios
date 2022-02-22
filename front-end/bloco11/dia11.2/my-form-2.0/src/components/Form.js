@@ -1,13 +1,30 @@
 import React from 'react';
 
 class Form extends React.Component{
+  constructor() {
+    super();
+
+    this.state = {
+      name: '',
+    }
+
+    this.handleName = this.handleName.bind(this);
+  }
+
+  handleName(event){
+    this.setState(() => ({
+      name: event.target.value.toUpperCase(),
+    }))
+  }
+
   render() {
+    const { name } = this.state;
     return (
       <form>
         <fieldset>
           <label htmlFor="name">
             Nome
-          <input type="text" name='name' id='name' />
+          <input type="text" name='name' id='name' onChange={ this.handleName } value={ name }/>
           </label>
           <label htmlFor="email">
             Email
