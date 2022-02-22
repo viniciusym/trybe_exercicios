@@ -6,9 +6,11 @@ class Form extends React.Component{
 
     this.state = {
       name: '',
+      adress: '',
     }
 
     this.handleName = this.handleName.bind(this);
+    this.handleAdress = this.handleAdress.bind(this);
   }
 
   handleName(event){
@@ -16,9 +18,15 @@ class Form extends React.Component{
       name: event.target.value.toUpperCase(),
     }))
   }
+  
+  handleAdress(event){
+    this.setState(() => ({
+      adress: event.target.value.replace(/[^a-zA-Z0-9]/g, ''),
+    }))
+  }
 
   render() {
-    const { name } = this.state;
+    const { name, adress } = this.state;
     return (
       <form>
         <fieldset>
@@ -36,7 +44,7 @@ class Form extends React.Component{
           </label>
           <label htmlFor="adress">
             Endereço
-            <input type="text" name="adress" id="adress" />
+            <input type="text" name="adress" id="adress" onChange={ this.handleAdress } value={ adress }/>
           </label>
           <label htmlFor="city">
             Cidade
