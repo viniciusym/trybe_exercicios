@@ -1,7 +1,7 @@
 const readline = require('readline-sync');
 
-const height = readline.question('Qual a sua altura?')
-const weight = readline.questionFloat('Qual o seu peso?')
+const height = readline.question('Qual a sua altura?');
+const weight = readline.questionFloat('Qual o seu peso?');
 
 const getImc = (height, weight) => {
   const imc = weight / (height ** 2);
@@ -18,7 +18,7 @@ const getImc = (height, weight) => {
       return `Seu imc é ${imc} e voce esta com obesidade grau II`;
     case imc > 40:
       return `Seu imc é ${imc} e voce esta com obesidade grau III`;
-  }
-}
+  };
+};
 
 console.log(getImc(height, weight));
