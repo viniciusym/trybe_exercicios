@@ -11,3 +11,18 @@ const multiply = (num1, num2, num3) => {
 multiply(20, 10, 12)
   .then(result => console.log(result))
   .catch(err => console.log(err));
+
+// exercicio 2//
+
+const randomNumber = Math.floor(Math.random() * 100 + 1);
+
+const getRandomMultiply = async () => {
+  try {
+    const result = await multiply(randomNumber, randomNumber, randomNumber);
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getRandomMultiply();
