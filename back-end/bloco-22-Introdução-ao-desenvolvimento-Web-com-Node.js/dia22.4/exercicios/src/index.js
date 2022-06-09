@@ -4,6 +4,12 @@ const api = express();
 
 api.use(express.json());
 
+api.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+  const response = { message: `Seu nome é ${name} e você tem ${age} anos de idade` };
+  return res.status(200).json(response);
+});
+
 api.get('/ping', (req, res) => {
   const response = { message: 'pong' };
   res.json(response);
@@ -14,7 +20,7 @@ api.post('/hello', (req, res) => {
   const name = body.name;
   const response = { message: `Hello, ${name}` };
   res.status(200).json(response);
-})
+});
 
 api.post('/greetings', (req, res) => {
   const { body: { name, age } } = req;
@@ -24,7 +30,8 @@ api.post('/greetings', (req, res) => {
   }
   const unauthorizedMessage = { message: 'Unauthorized' };
   res.status(401).json(unauthorizedMessage);
-})
+});
+
 
 api.listen('4000', () => {
   console.log('aplicativo iniciol');
