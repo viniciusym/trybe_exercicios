@@ -1,9 +1,10 @@
 const express = require('express');
 const { getAllBooks } = require('./book/book');
+const getByAuthorId = require('./middlewares/getBookByAuthorId');
 
 const api = express();
 
-api.get('/books', async(_req, res) => {
+api.get('/books', getByAuthorId, async(_req, res) => {
   const books = await getAllBooks();
 
   res.status(200).json(books);

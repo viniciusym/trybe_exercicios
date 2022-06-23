@@ -7,6 +7,13 @@ const getAllBooks = async () => {
   return books;
 }
 
+const getBookByAuthorId = async (authorId) => {
+  const books = await getAllBooks();
+  const bookByAuthorId = books.filter((book) => book.author_id === Number(authorId));
+  return bookByAuthorId;
+}
+
 module.exports = {
   getAllBooks,
+  getBookByAuthorId
 };
