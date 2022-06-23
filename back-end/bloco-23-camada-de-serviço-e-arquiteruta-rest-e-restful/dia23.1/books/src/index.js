@@ -1,14 +1,24 @@
 const express = require('express');
-const { getAllBooks, getBookById } = require('./book/book');
-const getByAuthorId = require('./middlewares/getBookByAuthorId');
+const { getAllBooks, getBookById, postNewBook } = require('./book/book');
+const getByAuthorId = require('./middlewares/getBookByAuthorId')
+const validateNewBook = require('./middlewares/validateNewBook');
 
 const api = express();
+
+api.use(express.json());
 
 api.get('/books', getByAuthorId, async(_req, res) => {
   const books = await getAllBooks();
 
   res.status(200).json(books);
 });
+
+api.post('/books', validateNewBook, async (req, res) => {
+  const newBook = req.body;
+  await postNewBook(newBook);
+
+  res.status(201).json({ message: 'Livro cadastrado com sucesso'});
+})
 
 api.get('/books/:id', async (req, res) => {
   const { params: { id } } = req;

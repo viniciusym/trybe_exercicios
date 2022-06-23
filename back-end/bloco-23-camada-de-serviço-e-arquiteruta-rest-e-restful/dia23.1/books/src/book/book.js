@@ -16,7 +16,15 @@ const modelBooks = {
     const sql = 'select * from model_example.books where author_id = ?'
     const [book] = await connection.query(sql, [authorId]);
     return book;
-  }
+  },
+  async postNewBook(book) {
+    const sql = 'insert into model_example.books set ?';
+    const [insertResponse] = await connection.query(sql, [book]);
+    return { 
+      affectedRows: insertResponse.affectedRows,
+      insetId: insertResponse.insertId
+    };
+  } 
 };
 
 module.exports = modelBooks;
