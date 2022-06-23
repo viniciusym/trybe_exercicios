@@ -13,9 +13,8 @@ api.get('/books', getByAuthorId, async(_req, res) => {
 api.get('/books/:id', async (req, res) => {
   const { params: { id } } = req;
   const book = await getBookById(id);
-  if (book.length === 0) {
-    res.status(404).json({ message: 'Not found' });
-    return;
+  if (!book) {
+    return res.status(404).json({ message: 'Not found' });
   };
   res.status(200).json(book);
 })

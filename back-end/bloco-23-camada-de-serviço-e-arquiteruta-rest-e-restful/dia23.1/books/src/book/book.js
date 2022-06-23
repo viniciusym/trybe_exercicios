@@ -1,22 +1,22 @@
 const connection = require('../db/connection');
 
 const getAllBooks = async () => {
-  const [books] = await connection.execute(
+  const [books] = await connection.query(
     'select * from model_example.books;',
   );
   return books;
 }
 
 const getBookById = async (bookId) => {
-  const books = await getAllBooks();
-  const bookById = books.filter((book) => book.id === Number(bookId));
-  return bookById;
+  const sql = 'select * from model_example.books where id = ?'
+  const [[book]] = await connection.query(sql, [bookId]);
+  return book;
 }
 
 const getBookByAuthorId = async (authorId) => {
-  const books = await getAllBooks();
-  const bookByAuthorId = books.filter((book) => book.author_id === Number(authorId));
-  return bookByAuthorId;
+  const sql = 'select * from model_example.books where author_id = ?'
+  const [book] = await connection.query(sql, [authorId]);
+  return book;
 }
 
 module.exports = {

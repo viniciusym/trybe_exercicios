@@ -7,7 +7,9 @@ const getByAuthorId = async (req, res, next) => {
     return;
   };
   const book = await getBookByAuthorId(authorId);
-
+  if (!book) {
+    return res.status(404).json({ message: 'Not found' });
+  }
   res.status(200).json(book)
 };
 
