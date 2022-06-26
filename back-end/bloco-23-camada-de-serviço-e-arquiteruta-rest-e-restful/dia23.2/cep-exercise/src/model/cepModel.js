@@ -7,12 +7,12 @@ const cepModel = {
     return ceps;
   },
   async exists(cepNumber) {
-    const sql = 'select * from cep_lookup.cep where cep = ?';
+    const sql = 'select * from cep_lookup.cep where number = ?';
     const [[cep]] = await connection.query(sql, [cepNumber]);
     return !!cep;
   },
   async getByNumber(cepNumber) {
-    const sql = 'select * from cep_lookup.cep where cep = ?';
+    const sql = 'select * from cep_lookup.cep where number = ?';
     const [[cep]] = await connection.query(sql, [cepNumber]);
     return cep
   },
