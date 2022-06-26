@@ -1,11 +1,10 @@
-const { checkIfExists } = require("../services/cepServices");
+const { checkIfExists, validateCepFormat } = require("../services/cepServices");
 
 const cepController = {
-  async validateCep(req, res, next) {
+  async getCepByNumber(req, res, next) {
     const { cep } = req.params;
-    const cepRegex = /\d{5}-?\d{3}/;
     const exists = await checkIfExists(cep);
-    const validfomart = cepRegex.test(cep) && cep.length === 8;
+    const validfomart = validateCepFormat(cep);
     switch(false) {
       case validfomart:
         res.status(401).json({ "error": { "code": "invalidData", "message": "CEP inválido" } });
