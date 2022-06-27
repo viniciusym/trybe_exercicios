@@ -15,7 +15,7 @@ const schema = Joi.object ({
 const cepServices = {
   validateCepFormat(cep) {
     const cepRegex = /\d{5}-?\d{3}/;
-    const isInvalidfomart = cepRegex.test(cep) && cep.length === 8;
+    const isInvalidfomart = cepRegex.test(cep) && cep.length === 9;
     if(!isInvalidfomart) {
       throw new InvalidDataError('CEP inválido');
     }

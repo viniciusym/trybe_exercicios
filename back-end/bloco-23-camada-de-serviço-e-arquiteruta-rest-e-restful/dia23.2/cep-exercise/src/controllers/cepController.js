@@ -1,4 +1,4 @@
-const { checkIfExists, validateCepFormat, validateCepToInsert, checkIfNewCepAlreadyExists, insertNewCep } = require("../services/cepServices");
+const { checkIfExists, validateCepFormat, validateCepToInsert, checkIfNewCepAlreadyExists, insertNewCep, getByNumber } = require("../services/cepServices");
 
 const cepController = {
   async getCepByNumber(req, res) {

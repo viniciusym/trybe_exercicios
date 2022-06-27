@@ -25,7 +25,7 @@ api.use((err, _req, res, _next) => {
     case 'AlreadyExistsError':
       res.status(409).json({ message });
     default:
-      return;
+      res.status(500).json(message);
   }
 })
 
