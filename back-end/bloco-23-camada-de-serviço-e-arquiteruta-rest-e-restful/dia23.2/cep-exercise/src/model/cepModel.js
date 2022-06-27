@@ -7,7 +7,7 @@ const cepModel = {
     return ceps;
   },
   async exists(cepNumber) {
-    const sql = 'select * from cep_lookup.cep where number = ?';
+    const sql = 'select 1 from cep_lookup.cep where number = ?';
     const [[cep]] = await connection.query(sql, [cepNumber]);
     return !!cep;
   },
@@ -18,7 +18,7 @@ const cepModel = {
   },
   async insertNew(newCep) {
     const sql = 'insert into cep_lookup.cep set ?';
-    const [[insertResponse]] = await connection.query(sql, [newCep]);
+    const [insertResponse] = await connection.query(sql, [newCep]);
     return insertResponse;
   }
 };

@@ -1,21 +1,19 @@
-const { checkIfExists, validateCepFormat } = require("../services/cepServices");
+const { checkIfExists, validateCepFormat, validateCepToInsert, checkIfNewCepAlreadyExists, insertNewCep } = require("../services/cepServices");
 
 const cepController = {
-  async getCepByNumber(req, res, next) {
+  async getCepByNumber(req, res) {
     const { cep } = req.params;
-    const exists = await checkIfExists(cep);
-    const validfomart = validateCepFormat(cep);
-    switch(false) {
-      case validfomart:
-        res.status(401).json({ "error": { "code": "invalidData", "message": "CEP inválido" } });
-        break;
-      case exists:
-        res.status(404).json({ "error": { "code": "notFound", "message": "CEP não encontrado" } });
-        break;
-      default:
-        next();
-        break;
-    }
+    validateCepFormat(cep);
+    await checkIfExists(cep);
+    const cepData = await getByNumber(cep)
+    res.status(200).json(cepData);
+  },
+  async insertNewCep(req, res) {
+    const { body: cepData, body: { number } } = req;
+    await checkIfNewCepAlreadyExists(number);
+    const newCep = await validateCepToInsert(cepData);
+    await insertNewCep(newCep);
+    res.status(201).json(newCep);
   }
 };
 

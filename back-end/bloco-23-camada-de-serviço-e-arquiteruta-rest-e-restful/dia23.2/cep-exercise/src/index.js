@@ -11,7 +11,22 @@ api.use(express.json());
 api.use('/cep', cepRoute)
 
 api.use((err, _req, res, _next) => {
-  console.log(err);
+  const { name, message } = err;
+  switch (name) {
+    case 'NotFoundError':
+      res.status(404).json({ message });
+      break;
+    case 'InvalidDataError':
+      res.status(401).json({ message });
+      break;
+    case 'ValidationError':
+      res.status(400).json({ message });
+      break;
+    case 'AlreadyExistsError':
+      res.status(409).json({ message });
+    default:
+      return;
+  }
 })
 
 api.listen(API_PORT, () => {
