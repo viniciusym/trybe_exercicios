@@ -21,12 +21,7 @@ const cepModel = {
     const sql = 'insert into cep_lookup.cep set ?';
     const [insertResponse] = await connection.query(sql, [newCep]);
     return insertResponse;
-  },
-  async getFromOtherApi(cep) {
-    const endpoint = `https://viacep.com.br/ws/${cep}/json/`
-    const response = await axios.get(endpoint);
-    return response;
-  },
+  }
 };
 
 module.exports = cepModel;
