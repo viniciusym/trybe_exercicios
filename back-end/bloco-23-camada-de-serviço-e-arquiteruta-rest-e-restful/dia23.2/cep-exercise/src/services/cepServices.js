@@ -3,6 +3,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const AlreadyExistsError = require('../errors/AlreadyExistsError');
 const { getByNumber, exists, insertNew, getFromOtherApi } = require('../model/cepModel');
 const Joi = require('joi');
+const viaCepModel = require('../model/viaCepModel');
 
 const schema = Joi.object({
   number: Joi.string().pattern(new RegExp(/\d{5}-?\d{3}/)).required(),
@@ -44,7 +45,7 @@ const cepServices = {
   async checkIfExists(cep) {
     const cepExists = await exists(cep);
     if (!cepExists) {
-      const { data } = await getFromOtherApi(cep);
+      const { data } = await viaCepModel.getByNumber(cep);
       if (data.erro) {
         throw new NotFoundError('CEP não encontrado');
       };
