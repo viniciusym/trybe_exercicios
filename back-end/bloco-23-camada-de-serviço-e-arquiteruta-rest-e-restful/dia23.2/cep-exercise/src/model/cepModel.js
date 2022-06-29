@@ -1,12 +1,6 @@
 const connection = require('./db');
-const axios = require('axios');
 
 const cepModel = {
-  async getAll() {
-    const sql = 'select * from cep_lookup.cep';
-    const [ceps] = await connection.query(sql);
-    return ceps;
-  },
   async exists(cepNumber) {
     const sql = 'select 1 from cep_lookup.cep where number = ?';
     const [[cep]] = await connection.query(sql, [cepNumber]);
