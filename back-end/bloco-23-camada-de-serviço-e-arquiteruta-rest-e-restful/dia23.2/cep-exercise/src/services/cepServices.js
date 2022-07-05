@@ -20,6 +20,7 @@ const cepServices = {
     if (!isInvalidfomart) {
       throw new InvalidDataError('CEP inválido');
     }
+    return isInvalidfomart
   },
   async validateCepToInsert(cep) {
     const value = await schema.validateAsync(cep);
