@@ -2,7 +2,7 @@ const { book } = require('../database/models');
 
 const bookService = {
   async getAll() {
-    const books = await book.getAll();
+    const books = book.findAll();
     return books;
   }
 };

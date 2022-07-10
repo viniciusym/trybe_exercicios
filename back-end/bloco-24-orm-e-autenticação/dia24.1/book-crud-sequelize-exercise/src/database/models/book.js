@@ -1,14 +1,11 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+
 /**
  * @param {import('sequelize').Sequelize} sequelize 
  * @param {import('sequelize').DataTypes} DataTypes 
  * @returns 
  */
-module.exports = (sequelize, DataTypes) => {
-  const book = sequelize.define('books', {
+const book = (sequelize, DataTypes) => {
+  const book = sequelize.define('book', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -27,19 +24,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       type: DataTypes.INTEGER,
       field: 'page_quantity'
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      field: 'created_at'
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      field: 'update_at'
     }
   }, {
-    tableName: 'books'
+    underscored: true,
+    timestamps: true,
   });
   return book;
 };
+
+module.exports = book;
