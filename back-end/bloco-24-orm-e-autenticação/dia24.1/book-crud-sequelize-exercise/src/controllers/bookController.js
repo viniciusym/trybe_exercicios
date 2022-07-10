@@ -33,6 +33,12 @@ const bookController = {
     const validatedBook = await bookService.validateUpdate(req.body);
     const updatedBook = await bookService.update(id, validatedBook);
     res.status(200).json(updatedBook);
+  },
+  async delete(req, res) {
+    const { id } = req.params;
+    await bookService.exists(id);
+    await bookService.delete(id);
+    res.status(204);
   }
 };
 

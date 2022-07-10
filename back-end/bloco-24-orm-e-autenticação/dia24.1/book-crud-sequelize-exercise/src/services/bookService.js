@@ -41,6 +41,11 @@ const bookService = {
       } });
     return updatedBook;
   },
+  async delete(id) {
+    const deletedBook = await book.destroy({
+      where: { id } });
+    if(deletedBook !== 1) throw new Error('algo deu errado');
+  },
   async exists(id) {
     const exists = await book.findOne({ where: { id } });
     if (exists === null) throw new BookNotFoundError('Book not found');
