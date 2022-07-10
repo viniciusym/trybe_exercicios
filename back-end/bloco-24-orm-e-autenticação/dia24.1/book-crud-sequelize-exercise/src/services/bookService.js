@@ -1,4 +1,5 @@
 const { book } = require('../database/models');
+const BookNotFoundError = require('../errors/BookNotFoundError');
 
 const bookService = {
   async getAll() {
@@ -6,8 +7,9 @@ const bookService = {
     return books;
   },
   async getById(id) {
-    const book = await book.findByPk(id);
-    return book;
+    const bookById = await book.findByPk(id);
+    if(bookById === null) throw new BookNotFoundError('Book not found');
+    return bookById;
   }
 };
 

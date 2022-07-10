@@ -1,8 +1,9 @@
 const { Router } = require('express');
-const { getAll } = require('../controllers/bookController');
+const bookController = require('../controllers/bookController');
 
 const bookRoute = Router();
 
-bookRoute.get('/', getAll);
+bookRoute.get('/', bookController.getAll);
+bookRoute.get('/:id', bookController.getbyId);
 
 module.exports = bookRoute;
