@@ -24,6 +24,26 @@ const bookService = {
     });
     const validatedBook = schema.validateAsync(unknownData);
     return validatedBook;
+  },
+  async validateUpdate(unknownData) {
+    const schema = Joi.object({
+      title: Joi.string().max(255),
+      author: Joi.string().max(255),
+      pageQuantity: Joi.number(),
+    });
+    const validatedBook = schema.validateAsync(unknownData);
+    return validatedBook;
+  },
+  async update(id, changes) {
+    const updatedBook = await book.update(changes,
+      { where: {
+        id: id,
+      } });
+    return updatedBook;
+  },
+  async exists(id) {
+    const exists = await book.findOne({ where: { id } });
+    if (exists === null) throw new BookNotFoundError('Book not found');
   }
 };
 
