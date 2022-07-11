@@ -5,7 +5,7 @@ const Joi = require('joi');
 
 const bookService = {
   async getAll() {
-    const books = book.findAll();
+    const books = book.findAll({ order: ['title', 'ASC']});
     return books;
   },
   async getById(id) {
