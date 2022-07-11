@@ -4,7 +4,11 @@ const bookController = {
   /**
    * @type{import('express').RequestHandler}
    */
-  async getAll(_req, res) {
+  async getAll(req, res) {
+    if(req.query.author) {
+      const booksByAuthor = await bookService.getByAuthor(req.query.author);
+      res.status(200).json(booksByAuthor);
+    }
     const books = await bookService.getAll();
     res.status(200).json(books);
   },

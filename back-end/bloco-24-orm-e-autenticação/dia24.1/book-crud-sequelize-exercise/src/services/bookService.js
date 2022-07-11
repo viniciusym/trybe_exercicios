@@ -1,5 +1,6 @@
 const { book } = require('../database/models');
 const BookNotFoundError = require('../errors/BookNotFoundError');
+const { Op } = require('sequelize');
 const Joi = require('joi');
 
 const bookService = {
@@ -11,6 +12,14 @@ const bookService = {
     const bookById = await book.findByPk(id);
     if(bookById === null) throw new BookNotFoundError('Book not found');
     return bookById;
+  },
+  async getByAuthor(author) {
+    const bookByAuthor = await book.findAll({
+      where: {
+        author: { [Op.substring]: author },
+      },
+    });
+    return bookByAuthor;
   },
   async create(newBook) {
     const createdBook = await book.create(newBook);
