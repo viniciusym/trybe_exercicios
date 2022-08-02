@@ -3,7 +3,7 @@ class Tv {
   private _size: number;
   private _resolution: number;
   private _connection: string[];
-  private _connectedTo: string;
+  private _connectedTo: string = 'none';
 
   constructor(
     brand: string, size: number, resolution: number, connection: string[]) {
