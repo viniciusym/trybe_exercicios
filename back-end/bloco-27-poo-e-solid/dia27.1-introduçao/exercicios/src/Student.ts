@@ -1,4 +1,4 @@
- class Student {
+class Student {
   private _enrolment: string;
   private _name: string;
   private _testScores: [number, number, number, number];
@@ -9,10 +9,15 @@
     name: string,
     testScores: [number, number, number, number],
     assignmentScores: [number, number],
-    ) {
-      this._assignmentScores = assignmentScores;
-      this._enrolment = enrolment;
-      this._name = name;
-      this._testScores = testScores;
-    }
+  ) {
+    this._assignmentScores = assignmentScores;
+    this._enrolment = enrolment;
+    this._name = name;
+    this._testScores = testScores;
+  };
+
+  sumTestScores(): number {
+    const scoresSum = this._testScores.reduce((a, b) => a + b, 0);
+    return scoresSum;
+  }
 }
