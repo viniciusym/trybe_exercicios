@@ -1,4 +1,4 @@
-export default class Client {
+export default class Customer {
   private _name: string;
 
   constructor(name: string) {
