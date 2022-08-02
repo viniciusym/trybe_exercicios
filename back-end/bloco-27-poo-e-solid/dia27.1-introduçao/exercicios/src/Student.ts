@@ -16,8 +16,14 @@ class Student {
     this._testScores = testScores;
   };
 
-  sumTestScores(): number {
+  testScoresSum(): number {
     const scoresSum = this._testScores.reduce((a, b) => a + b, 0);
     return scoresSum;
+  }
+
+  testScoresAvarage(): number {
+    const avarage = this._testScores.reduce((a, b) => a + b, 0) / this._testScores.length;
+
+    return avarage;
   }
 }
